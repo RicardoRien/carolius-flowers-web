@@ -1,0 +1,16 @@
+{
+  "name": "carolius-flowers",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RicardoRien/carolius-flowers-web"
+  },
+  "author": "Ricardo Aguilar <ricardoaguilar96@yahoo.com> <Tw: @Xilorgano>",
+  "license": "ISC",
+  "homepage": "https://carolius-flowers.netlify.app/"
+}

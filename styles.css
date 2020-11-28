@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,700;1,400&display=swap');
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global CSS 
+--------------*/
+body {
+  color: white; 
+  background-color: #2c2c2c;
+  margin: 0;
+  font-family: 'Nunito', 'Verdana', 'Arial';
+  font-size: 17px;
+  overflow-x: hidden;
+}
+
+/* Header
+----------*/
+.externo {
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  height: 35vh; 
+  font-weight: bolder;
+}
+
+.interno {
+  line-height: 3em;
+  align-self: center;
+  text-align: center;
+}
+
+/* About & Photo 
+------------------*/
+main {
+  background: #2c2c2c;
+  padding: 1em;
+}
+
+main > p {
+  padding: 0.7em 0.7em 0.7em 0em;
+}
+
+.photo {
+  background-image: url('/images/model.jpg');
+  background-size: cover;
+  height: 35vh;
+}
+
+h3 {
+  color: rgb(255, 251, 5);
+  padding: 0.7em 0.7em 0.7em 0em;
+}
+
+/* Slider 
+-------------------------*/
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 5%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.closeBtn {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(114, 3, 3);
+  position: absolute;
+  z-index: 4;
+    top: 10%;
+    right: 11%;
+  cursor: pointer;
+
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.slide .content {
+  position: absolute;
+  bottom: 60px;
+  left: -600px;
+  opacity: 0;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 35px;
+  z-index: 2;
+}
+
+.slide .content h1 {
+  margin-bottom: 10px;
+}
+
+.slide.current .content {
+  opacity: 1;
+  transform: translateX(600px);
+  transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button#next {
+  position: absolute;
+  bottom: -50%;
+  right: 15px;
+}
+
+.buttons button#prev {
+  position: absolute;
+  bottom: -50%;
+  left: 15px;
+}
+
+.buttons button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Backgorund Images 
+------------------------*/
+.slide:first-child {
+  background: url('/images/orchild.jpg') no-repeat
+    center center/cover;
+}
+.slide:nth-child(2) {
+  background: url('/images/rose.jpg') no-repeat
+    center center/cover;
+}
+.slide:nth-child(3) {
+  background: url('/images/sunflower.jpg') no-repeat
+    center center/cover;
+}
+.slide:nth-child(4) {
+  background: url('/images/venusflytrap.jpg') no-repeat
+    center center/cover;
+}
+.slide:nth-child(5) {
+  background: url('/images/cherryblosom-sakura.jpg') no-repeat
+    center center/cover;
+} 
+.slide:nth-child(6)  {
+  background: url('/images/dahlia.jpg') no-repeat
+    center center/cover;
+}
+
+/* Text Selection Color 
+-------------------------*/
+::selection {
+  background:rgb(245, 245, 37); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background:rgb(245, 245, 37); /* Gecko Browsers */
+}
+
+/* Scrollbar 
+-------------*/
+html {
+  --scrollbarBG: #CFD8DC;
+  --thumbBG: #90A4AE;
+}
+body::-webkit-scrollbar {
+  width: 11px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+/* Responsive / Media Querys
+   background-repeat: 
+   >320px — 480px: Mobile devices
+   >481px — 768px: iPads, Tablets
+   >769px — 1024px: Small screens, laptops
+   >1025px — 1200px: Desktops, large screens
+   >1201px and more —  Extra large screens, TV
+----------------------------- */
+
+@media (max-width: 500px) {
+  .slide .content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+  }
+
+  .slide.current .content {
+    transform: translateY(-300px);
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  body {
+    font-size: 18px;
+    background-color: #ffffff;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  main > p {
+    padding: 0;
+  }
+  .slider { margin-top: 0%; }
+  .buttons button#next { bottom: -20%; }
+  .buttons button#prev { bottom: -20%; }
+}
+
+@media only screen and (min-width: 750px) {
+  body { font-size: 19px; }
+  main > p {
+    font-size: 1.2rem; 
+    line-height: 33px;
+  }
+  h1 { font-size:3.1rem; }
+  h2 { font-size:2.3rem; }
+
+  .closeBtn { font-size: 2.2rem; }
+}
+
+@media only screen and (min-width: 850px) {
+  body { font-size: 22px; }
+  main > p {font-size: 1.6rem; }
+}
+
+@media only screen and (min-width: 1000px) {
+  body { font-size: 24px; }
+}
